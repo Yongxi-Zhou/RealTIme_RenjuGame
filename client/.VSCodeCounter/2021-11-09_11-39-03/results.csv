@@ -1,0 +1,15 @@
+"filename", "language", "JavaScript", "CSS", "JSON", "HTML", "Markdown", "XML", "comment", "blank", "total"
+"/Users/bytedance/git_project/tic-tae-toe/project/tic-tae-toe/README.md", "Markdown", 0, 0, 0, 0, 38, 0, 0, 33, 71
+"/Users/bytedance/git_project/tic-tae-toe/project/tic-tae-toe/package.json", "JSON", 0, 0, 38, 0, 0, 0, 0, 1, 39
+"/Users/bytedance/git_project/tic-tae-toe/project/tic-tae-toe/public/index.html", "HTML", 0, 0, 0, 20, 0, 0, 23, 1, 44
+"/Users/bytedance/git_project/tic-tae-toe/project/tic-tae-toe/public/manifest.json", "JSON", 0, 0, 25, 0, 0, 0, 0, 1, 26
+"/Users/bytedance/git_project/tic-tae-toe/project/tic-tae-toe/src/App.css", "CSS", 0, 42, 0, 0, 0, 0, 0, 9, 51
+"/Users/bytedance/git_project/tic-tae-toe/project/tic-tae-toe/src/App.js", "JavaScript", 97, 0, 0, 0, 0, 0, 30, 23, 150
+"/Users/bytedance/git_project/tic-tae-toe/project/tic-tae-toe/src/component/Board.js", "JavaScript", 33, 0, 0, 0, 0, 0, 8, 6, 47
+"/Users/bytedance/git_project/tic-tae-toe/project/tic-tae-toe/src/component/Square.js", "JavaScript", 8, 0, 0, 0, 0, 0, 5, 3, 16
+"/Users/bytedance/git_project/tic-tae-toe/project/tic-tae-toe/src/index.css", "CSS", 0, 12, 0, 0, 0, 0, 0, 2, 14
+"/Users/bytedance/git_project/tic-tae-toe/project/tic-tae-toe/src/index.js", "JavaScript", 12, 0, 0, 0, 0, 0, 3, 3, 18
+"/Users/bytedance/git_project/tic-tae-toe/project/tic-tae-toe/src/logo.svg", "XML", 0, 0, 0, 0, 0, 1, 0, 0, 1
+"/Users/bytedance/git_project/tic-tae-toe/project/tic-tae-toe/src/reportWebVitals.js", "JavaScript", 12, 0, 0, 0, 0, 0, 0, 2, 14
+"/Users/bytedance/git_project/tic-tae-toe/project/tic-tae-toe/src/setupTests.js", "JavaScript", 1, 0, 0, 0, 0, 0, 4, 1, 6
+"Total", "-", 163, 54, 63, 20, 38, 1, 73, 85, 497

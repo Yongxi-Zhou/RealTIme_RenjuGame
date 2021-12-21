@@ -1,0 +1,45 @@
+Date : 2021-11-09 11:39:03
+Directory : /Users/bytedance/git_project/tic-tae-toe/project/tic-tae-toe
+Total : 13 files,  339 codes, 73 comments, 85 blanks, all 497 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| JavaScript |          6 |        163 |         50 |         38 |        251 |
+| JSON       |          2 |         63 |          0 |          2 |         65 |
+| CSS        |          2 |         54 |          0 |         11 |         65 |
+| Markdown   |          1 |         38 |          0 |         33 |         71 |
+| HTML       |          1 |         20 |         23 |          1 |         44 |
+| XML        |          1 |          1 |          0 |          0 |          1 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++--------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                 | files      | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                    |         13 |        339 |         73 |         85 |        497 |
+| public                                                                               |          2 |         45 |         23 |          2 |         70 |
+| src                                                                                  |          9 |        218 |         50 |         49 |        317 |
+| src/component                                                                        |          2 |         41 |         13 |          9 |         63 |
++--------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++--------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                             | language   | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| /Users/bytedance/git_project/tic-tae-toe/project/tic-tae-toe/README.md               | Markdown   |         38 |          0 |         33 |         71 |
+| /Users/bytedance/git_project/tic-tae-toe/project/tic-tae-toe/package.json            | JSON       |         38 |          0 |          1 |         39 |
+| /Users/bytedance/git_project/tic-tae-toe/project/tic-tae-toe/public/index.html       | HTML       |         20 |         23 |          1 |         44 |
+| /Users/bytedance/git_project/tic-tae-toe/project/tic-tae-toe/public/manifest.json    | JSON       |         25 |          0 |          1 |         26 |
+| /Users/bytedance/git_project/tic-tae-toe/project/tic-tae-toe/src/App.css             | CSS        |         42 |          0 |          9 |         51 |
+| /Users/bytedance/git_project/tic-tae-toe/project/tic-tae-toe/src/App.js              | JavaScript |         97 |         30 |         23 |        150 |
+| /Users/bytedance/git_project/tic-tae-toe/project/tic-tae-toe/src/component/Board.js  | JavaScript |         33 |          8 |          6 |         47 |
+| /Users/bytedance/git_project/tic-tae-toe/project/tic-tae-toe/src/component/Square.js | JavaScript |          8 |          5 |          3 |         16 |
+| /Users/bytedance/git_project/tic-tae-toe/project/tic-tae-toe/src/index.css           | CSS        |         12 |          0 |          2 |         14 |
+| /Users/bytedance/git_project/tic-tae-toe/project/tic-tae-toe/src/index.js            | JavaScript |         12 |          3 |          3 |         18 |
+| /Users/bytedance/git_project/tic-tae-toe/project/tic-tae-toe/src/logo.svg            | XML        |          1 |          0 |          0 |          1 |
+| /Users/bytedance/git_project/tic-tae-toe/project/tic-tae-toe/src/reportWebVitals.js  | JavaScript |         12 |          0 |          2 |         14 |
+| /Users/bytedance/git_project/tic-tae-toe/project/tic-tae-toe/src/setupTests.js       | JavaScript |          1 |          4 |          1 |          6 |
+| Total                                                                                |            |        339 |         73 |         85 |        497 |
++--------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
