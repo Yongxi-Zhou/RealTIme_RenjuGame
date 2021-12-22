@@ -3,7 +3,7 @@ import io from "socket.io-client";
 import React, { useState, useRef } from "react";
 import { UserContext } from "./UserContect";
 
-const socket = io("http://localhost:5000");
+const socket = io("https://tic-socket.herokuapp.com/");
 
 function App() {
   const [username, setUsername] = useState("");
