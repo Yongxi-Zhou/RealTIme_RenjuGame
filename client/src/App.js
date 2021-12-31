@@ -7,7 +7,7 @@ import "./App.css";
 
 const DEV_SOCKET = "http://localhost:5000/";
 const PORD_SOCKET = "https://tic-socket.herokuapp.com/";
-const socket = io(DEV_SOCKET);
+const socket = io(PORD_SOCKET);
 
 function App() {
   const [username, setUsername] = useState("");

@@ -19,7 +19,7 @@ app.use(router);
 //把express上的server作为参数传到socket.io的Server class中, config cors for the FE server
 const io = new Server(server, {
   cors: {
-    origin: [/ticfe\.web\.bytedance\.net$/, /localhost:3000$/],
+    origin: [/localhost:3000$/, /renju\.web\.cloudendpoint\.cn$/],
     // origin: /localhost:3000$/,
     methods: ["GET", "POST"],
   },
