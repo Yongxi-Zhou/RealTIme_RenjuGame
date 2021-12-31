@@ -1,19 +1,26 @@
 const express = require("express");
-//app实例对象
-const app = express();
 const http = require("http");
 const cors = require("cors");
+// const socketio = require("socket.io");
+
 const { Server } = require("socket.io");
 
-app.use(cors());
+const router = require("./router");
 
+//app实例对象
+const app = express();
 //app 部署的server
 const server = http.createServer(app);
+// const io = socketio(server);
+
+app.use(cors());
+app.use(router);
 
 //把express上的server作为参数传到socket.io的Server class中, config cors for the FE server
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:8000",
+    origin: [/ticfe\.web\.bytedance\.net$/, /localhost:3000$/],
+    // origin: /localhost:3000$/,
     methods: ["GET", "POST"],
   },
 });
@@ -38,6 +45,8 @@ io.on("connection", (socket) => {
       };
     }
 
+    // socket.emit("getUserList", userList);
+
     if (userList[data.room].count > 2) {
       socket.emit("full", true);
       userList[data.room].users.pop();
@@ -54,7 +63,7 @@ io.on("connection", (socket) => {
   socket.on("send_message", (data) => {
     console.log(data);
     //to()的参数根据join的参数决定发送给哪个room
-    socket.emit("receive_message", data);
+    socket.to(data.room).emit("receive_message", data);
   });
 
   socket.on("set_chess", (data) => {
@@ -85,15 +94,19 @@ io.on("connection", (socket) => {
 
   socket.on("disconnect", (data) => {
     console.log(userId[socket.id]);
-    // let user = userId[socket.id][0];
-    // let room = userId[socket.id][1];
-    // const idx = userList[room].users.indexOf(user);
-    // userList[room].users.splice(idx, 1);
-    // userList[room].count--;
+    if (userId[socket.id]) {
+      let user = userId[socket.id][0];
+      let room = userId[socket.id][1];
+      const idx = userList[room].users.indexOf(user);
+      userList[room].users.splice(idx, 1);
+      userList[room].count--;
+      console.log(userList);
+      console.log(userId);
+    }
     console.log(`User disconnected socket id : ${socket.id}`);
   });
 });
 
-server.listen(5000, () => {
+server.listen(process.env.PORT || 5000, () => {
   console.log("server is running....");
 });

@@ -3,54 +3,66 @@
   margin: 0;
   padding: 0;
 }
+
+@baseFont: 50;
+
 body {
-  font: 0.28rem "Century Gothic", Futura, sans-serif;
-  margin: 0.4em;
+  font: (14rem / @baseFont) "Century Gothic", Futura, sans-serif;
+  margin: (20em / @baseFont);
 }
+
 ol,
 ul {
-  padding-left: 0.6rem;
+  padding-left: (30rem / @baseFont);
 }
+
 .board-row:after {
   clear: both;
   content: "";
   display: table;
 }
+
 .status {
-  margin-bottom: 0.2rem;
+  margin-bottom: (10rem / @baseFont);
 }
+
 .square {
   background: #fff;
-  border: 0.02rem solid #999;
+  border: (1rem / @baseFont) solid #999;
   float: left;
-  font-size: 0.48rem;
+  font-size: (24rem / @baseFont);
   font-weight: bold;
-  line-height: 0.68rem;
-  height: 0.68rem;
-  margin-right: -0.02rem;
-  margin-top: -0.02rem;
+  line-height: (34rem / @baseFont);
+  height: (34rem / @baseFont);
+  margin-right: (-1rem / @baseFont);
+  margin-top: (-1rem / @baseFont);
   padding: 0;
   text-align: center;
-  width: 0.68rem;
+  width: (34rem / @baseFont);
 }
+
 .square:focus {
   outline: none;
 }
+
 .kbd-navigation .square:focus {
   background: #ddd;
 }
+
 .game {
   display: flex;
   flex-direction: row;
 }
+
 .game-info {
-  margin-left: 0.4rem;
+  margin-left: (20rem / @baseFont);
 }
+
 .App {
   width: 100vw;
   height: 100vh;
   background: #fff;
-  margin-top: 0.6rem;
+  margin-top: (30rem / @baseFont);
   color: #212121;
   font-family: "Open Sans", sans-serif;
   display: grid;
@@ -60,71 +72,57 @@ body {
   margin: 0%;
   padding: 0%;
 }
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 300;
-  font-stretch: normal;
-  src: url(https://fonts.gstatic.com/s/opensans/v27/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0B4gaVc.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 400;
-  font-stretch: normal;
-  src: url(https://fonts.gstatic.com/s/opensans/v27/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4gaVc.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 700;
-  font-stretch: normal;
-  src: url(https://fonts.gstatic.com/s/opensans/v27/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1x4gaVc.ttf) format('truetype');
-}
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700");
+
 .joinChatContainer {
   display: flex;
   flex-direction: column;
   text-align: center;
 }
+
 .joinChatContainer h3 {
-  font-size: 0.8rem;
-  margin-bottom: 0.32rem;
+  font-size: (40rem / @baseFont);
+  margin-bottom: (16rem / @baseFont);
 }
 .joinChatContainer input {
-  width: 4.2rem;
-  height: 0.8rem;
-  margin: 0.14rem;
-  border: 0.04rem solid #43a047;
-  border-radius: 0.1rem;
-  padding: 0.1rem;
-  font-size: 0.32rem;
+  width: (210rem / @baseFont);
+  height: (40rem / @baseFont);
+  margin: (7rem / @baseFont);
+  border: (2rem / @baseFont) solid #43a047;
+  border-radius: (5rem / @baseFont);
+  padding: (5rem / @baseFont);
+  font-size: (16rem / @baseFont);
 }
+
 .joinChatContainer button {
-  width: 4.5rem;
-  height: 1rem;
-  margin: 0.14rem;
+  width: (225rem / @baseFont);
+  height: (50rem / @baseFont);
+  margin: (7rem / @baseFont);
   border: none;
-  border-radius: 0.1rem;
-  padding: 0.1rem;
-  font-size: 0.32rem;
+  border-radius: (5rem / @baseFont);
+  padding: (5rem / @baseFont);
+  font-size: (16rem / @baseFont);
   background: #43a047;
   color: #fff;
   cursor: pointer;
 }
+
 .joinChatContainer button:hover {
   background: #2e7d32;
 }
+
 .chat-window {
-  width: 6rem;
-  height: 8.4rem;
-  margin-left: 1rem;
+  width: (300rem / @baseFont);
+  height: (420rem / @baseFont);
+  margin-left: (50rem / @baseFont);
 }
+
 .chat-window p {
   margin: 0;
 }
 .chat-window .chat-header {
-  height: 0.9rem;
-  border-radius: 0.12rem;
+  height: (45rem / @baseFont);
+  border-radius: (6rem / @baseFont);
   background: #263238;
   position: relative;
   cursor: pointer;
@@ -134,12 +132,14 @@ body {
   padding: 0 1em 0 2em;
   color: #fff;
   font-weight: 700;
-  line-height: 0.9rem;
+  line-height: (45rem / @baseFont);
 }
+
 .chat-window .chat-body {
-  height: 8rem;
+  height: (400rem / @baseFont);
   border: 1px solid #263238;
   background: #fff;
+
   position: relative;
 }
 .chat-window .chat-body .message-container {
@@ -148,67 +148,79 @@ body {
   overflow-y: scroll;
   overflow-x: hidden;
 }
+
 .chat-window .chat-body .message-container::-webkit-scrollbar {
   display: none;
 }
 .chat-window .chat-body .message {
   height: auto;
-  padding: 0.2rem;
+  padding: (10rem / @baseFont);
   display: flex;
 }
+
 .chat-window .chat-body .message .message-content {
   width: auto;
   height: auto;
-  min-height: 0.8rem;
-  max-width: 2.4rem;
+  min-height: (40rem / @baseFont);
+  max-width: (120rem / @baseFont);
   background-color: #43a047;
-  border-radius: 0.1rem;
+  border-radius: (5rem / @baseFont);
   color: white;
   display: flex;
   align-items: center;
-  margin-right: 0.1rem;
-  margin-left: 0.1rem;
-  padding-right: 0.1rem;
-  padding-left: 0.1rem;
+  margin-right: (5rem / @baseFont);
+  margin-left: (5rem / @baseFont);
+  padding-right: (5rem / @baseFont);
+  padding-left: (5rem / @baseFont);
   overflow-wrap: break-word;
   word-break: break-word;
 }
+
 #other {
   justify-content: flex-start;
 }
+
 #other .message-content {
   justify-content: flex-start;
   background-color: cornflowerblue;
 }
+
 #other .message-meta {
   justify-content: flex-start;
-  margin-left: 0.1rem;
+  margin-left: (5rem / @baseFont);
 }
+
 #you {
   justify-content: flex-end;
 }
+
 #you .message-content {
   justify-content: flex-end;
   background-color: #43a047;
 }
+
 #you .message-meta {
   justify-content: flex-end;
-  margin-right: 0.1rem;
+  margin-right: (5rem / @baseFont);
 }
+
 .message-meta #author {
-  margin-left: 0.1rem;
+  margin-left: (5rem / @baseFont);
   font-weight: bold;
 }
+
 .chat-window .chat-body .message .message-meta {
   display: flex;
-  font-size: 0.24rem;
+  font-size: (12rem / @baseFont);
 }
+
 .chat-window .chat-footer {
-  height: 0.8rem;
+  height: (40rem / @baseFont);
   border: 1px solid #263238;
   border-top: none;
   display: flex;
 }
+
 .chat-window .chat-footer input {
   height: 100%;
   flex: 85%;
@@ -216,9 +228,11 @@ body {
   padding: 0 0.7em;
   font-size: 1em;
   border-right: 1px dotted #607d8b;
+
   outline: none;
   font-family: "Open Sans", sans-serif;
 }
+
 .chat-window .chat-footer button {
   border: 0;
   display: grid;
@@ -228,9 +242,10 @@ body {
   height: 100%;
   background: transparent;
   outline: none;
-  font-size: 0.5rem;
+  font-size: (25rem / @baseFont);
   color: lightgray;
 }
+
 .chat-window .chat-footer button:hover {
   color: #43a047;
 }

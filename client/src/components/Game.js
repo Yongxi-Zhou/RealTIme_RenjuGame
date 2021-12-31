@@ -1,19 +1,20 @@
-import "./App.css";
-import React, { useState, useContext, useEffect, useRef } from "react";
-import Board from "./component/Board";
-import { UserContext } from "./UserContect";
-import JudgeWinner from "./JudgeWinner";
+// import "../App.css";
+import React, { useState, useContext, useEffect, forwardRef } from "react";
+import Board from "./Board";
+import { UserContext } from "../util/UserContect";
+import JudgeWinner from "../util/JudgeWinner";
 
 /**
  * 爷爷组件
  */
-const Game = ({ socket, username, room }) => {
+const Game = forwardRef(({ socket, username, room, full }, ref) => {
   const [isLogin, setIsLogin] = useContext(UserContext);
   const [stage, setStage] = useState({
     stepNum: 0,
     xIsNext: true,
     history: [
       {
+        username: null,
         square: Array(15)
           .fill(null)
           .map((_) => new Array(15).fill(null)),
@@ -25,6 +26,7 @@ const Game = ({ socket, username, room }) => {
     winner: null,
     room: room,
   });
+  // const userList = useRef([]);
 
   useEffect(() => {
     socket.on("receive_chess", (data) => {
@@ -41,7 +43,10 @@ const Game = ({ socket, username, room }) => {
    * @param {*} idx 要跳转到的步数
    */
   const jumpTo = async (idx) => {
-    console.log(`idx:${idx}`);
+    if (full) {
+      return;
+    }
+    // console.log(`idx:${idx}`);
     const message = {
       ...stage,
       stepNum: idx,
@@ -49,6 +54,7 @@ const Game = ({ socket, username, room }) => {
       isWin: false,
       winner: null,
     };
+    console.log(message);
     await socket.emit("retrieve_chess", message);
 
     setStage({
@@ -65,10 +71,16 @@ const Game = ({ socket, username, room }) => {
    */
   //TODO i,j
   const handleClick = async (i, j) => {
+    if (full) {
+      return;
+    }
     //获取当前状态square数组的copy（避免直接操作this.state）
-    console.log(`stepNum-click: ${stage.stepNum}`);
     let history = stage.history.slice(0, stage.stepNum + 1);
     let current = history[history.length - 1];
+    console.log(stage.history);
+    if (current.username === username) {
+      return;
+    }
     const newSquare = JSON.parse(JSON.stringify(current.square));
     if (calculateWinner(newSquare, i, j) === true || newSquare[i][j]) {
       return;
@@ -85,6 +97,7 @@ const Game = ({ socket, username, room }) => {
       history: history.concat([
         {
           square: newSquare,
+          username: username,
         },
       ]),
       curX: i,
@@ -215,6 +228,6 @@ const Game = ({ socket, username, room }) => {
       </div>
     </div>
   );
-};
+});
 
 export default Game;

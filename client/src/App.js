@@ -1,14 +1,19 @@
-import Game from "./Game";
+import Game from "./components/Game";
+import Chat from "./components/Chat";
 import io from "socket.io-client";
 import React, { useState, useRef } from "react";
-import { UserContext } from "./UserContect";
+import { UserContext } from "./util/UserContect";
+import "./App.css";
 
-const socket = io("https://tic-socket.herokuapp.com/");
+const DEV_SOCKET = "http://localhost:5000/";
+const PORD_SOCKET = "https://tic-socket.herokuapp.com/";
+const socket = io(DEV_SOCKET);
 
 function App() {
   const [username, setUsername] = useState("");
   const [room, setRoom] = useState("");
   const [isLogin, setIsLogin] = useState(false);
+  const [isFull, setIsFull] = useState(false);
 
   const joinRoom = () => {
     if (username !== "" && room !== "") {
@@ -16,13 +21,25 @@ function App() {
         user: username,
         room: room,
       });
+      // socket.on("getUserList", (data) => {
+      //   userList.current = data;
+      //   console.log(userList.current);
+      // });
+
       socket.on("full", (data) => {
         if (data) {
-          setIsLogin(false);
-          alert("the room is full");
-          return;
+          setIsFull(true);
+          // setIsLogin(false);
+          // alert("the room is full");
+          // return;
         }
       });
+
+      // console.log(userList.current);
+      // if (userList.current.length > 2) {
+      //   alert("the room is full");
+      //   return;
+      // }
 
       setIsLogin(true);
     }
@@ -57,7 +74,15 @@ function App() {
             <button onClick={joinRoom}>Join a room</button>
           </div>
         ) : (
-          <Game socket={socket} username={username} room={room} />
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <Game
+              socket={socket}
+              username={username}
+              room={room}
+              full={isFull}
+            />
+            <Chat socket={socket} username={username} room={room} />
+          </div>
         )}
       </UserContext.Provider>
     </div>
